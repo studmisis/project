@@ -36,7 +36,7 @@ module.exports = {
       {},
     );
 
-    // Авторы: 1-Толстой, 2-Достоевский, 3-Пушкин, 4-Чехов, 5-Тургенев
+    // Авторы: 1-Толстой, 2-Достоевский, 3-Пушкин, 4-Чехов, 5-Тургенев, 6-Гоголь, 7-Лермонтов, 8-Булгаков, 9-Набоков, 10-Пастернак
     await queryInterface.bulkInsert(
       'Authors',
       [
@@ -64,6 +64,31 @@ module.exports = {
           authorName: 'Иван',
           authorSurname: 'Тургенев',
           authorYears: '1818-1883',
+        },
+        {
+          authorName: 'Николай',
+          authorSurname: 'Гоголь',
+          authorYears: '1809-1852',
+        },
+        {
+          authorName: 'Михаил',
+          authorSurname: 'Лермонтов',
+          authorYears: '1814-1841',
+        },
+        {
+          authorName: 'Михаил',
+          authorSurname: 'Булгаков',
+          authorYears: '1891-1940',
+        },
+        {
+          authorName: 'Владимир',
+          authorSurname: 'Набоков',
+          authorYears: '1899-1977',
+        },
+        {
+          authorName: 'Борис',
+          authorSurname: 'Пастернак',
+          authorYears: '1890-1960',
         },
       ],
       {},
@@ -101,7 +126,7 @@ module.exports = {
       {},
     );
 
-    // Книги: 1-Война и мир, 2-Преступление и наказание, 3-Евгений Онегин, 4-Анна Каренина, 5-Идиот, 6-Вишнёвый сад, 7-Отцы и дети, 8-Капитанская дочка, 9-Братья Карамазовы, 10-Дама с собачкой
+    // Книги: расширенный список
     await queryInterface.bulkInsert(
       'Books',
       [
@@ -185,6 +210,126 @@ module.exports = {
           authorId: 4, // Чехов
           genreId: 3, // Рассказ
         },
+        {
+          bookTitle: 'Мёртвые души',
+          bookDescription: 'Поэма о похождениях Чичикова',
+          bookDone: true,
+          bookImageUrl: null,
+          authorId: 6, // Гоголь
+          genreId: 1, // Роман
+        },
+        {
+          bookTitle: 'Ревизор',
+          bookDescription: 'Комедия о мнимом ревизоре',
+          bookDone: true,
+          bookImageUrl: null,
+          authorId: 6, // Гоголь
+          genreId: 5, // Драма
+        },
+        {
+          bookTitle: 'Шинель',
+          bookDescription: 'Повесть о маленьком человеке',
+          bookDone: true,
+          bookImageUrl: null,
+          authorId: 6, // Гоголь
+          genreId: 2, // Повесть
+        },
+        {
+          bookTitle: 'Герой нашего времени',
+          bookDescription: 'Роман о Печорине, лишнем человеке',
+          bookDone: true,
+          bookImageUrl: null,
+          authorId: 7, // Лермонтов
+          genreId: 1, // Роман
+        },
+        {
+          bookTitle: 'Мастер и Маргарита',
+          bookDescription: 'Философский роман о добре и зле',
+          bookDone: true,
+          bookImageUrl: null,
+          authorId: 8, // Булгаков
+          genreId: 1, // Роман
+        },
+        {
+          bookTitle: 'Собачье сердце',
+          bookDescription: 'Повесть о профессоре Преображенском',
+          bookDone: true,
+          bookImageUrl: null,
+          authorId: 8, // Булгаков
+          genreId: 2, // Повесть
+        },
+        {
+          bookTitle: 'Белая гвардия',
+          bookDescription: 'Роман о семье Турбиных в годы Гражданской войны',
+          bookDone: true,
+          bookImageUrl: null,
+          authorId: 8, // Булгаков
+          genreId: 1, // Роман
+        },
+        {
+          bookTitle: 'Лолита',
+          bookDescription: 'Роман о трагической страсти',
+          bookDone: true,
+          bookImageUrl: null,
+          authorId: 9, // Набоков
+          genreId: 1, // Роман
+        },
+        {
+          bookTitle: 'Защита Лужина',
+          bookDescription: 'Роман о гениальном шахматисте',
+          bookDone: true,
+          bookImageUrl: null,
+          authorId: 9, // Набоков
+          genreId: 1, // Роман
+        },
+        {
+          bookTitle: 'Доктор Живаго',
+          bookDescription: 'Роман о судьбе интеллигенции в революции',
+          bookDone: true,
+          bookImageUrl: null,
+          authorId: 10, // Пастернак
+          genreId: 1, // Роман
+        },
+        {
+          bookTitle: 'Воскресение',
+          bookDescription: 'Роман о нравственном возрождении',
+          bookDone: true,
+          bookImageUrl: null,
+          authorId: 1, // Толстой
+          genreId: 1, // Роман
+        },
+        {
+          bookTitle: 'Бесы',
+          bookDescription: 'Роман о революционном движении',
+          bookDone: true,
+          bookImageUrl: null,
+          authorId: 2, // Достоевский
+          genreId: 1, // Роман
+        },
+        {
+          bookTitle: 'Дубровский',
+          bookDescription: 'Роман о благородном разбойнике',
+          bookDone: true,
+          bookImageUrl: null,
+          authorId: 3, // Пушкин
+          genreId: 2, // Повесть
+        },
+        {
+          bookTitle: 'Палата №6',
+          bookDescription: 'Повесть о сумасшедшем доме',
+          bookDone: true,
+          bookImageUrl: null,
+          authorId: 4, // Чехов
+          genreId: 2, // Повесть
+        },
+        {
+          bookTitle: 'Рудин',
+          bookDescription: 'Роман о лишнем человеке',
+          bookDone: true,
+          bookImageUrl: null,
+          authorId: 5, // Тургенев
+          genreId: 1, // Роман
+        },
       ],
       {},
     );
@@ -202,6 +347,14 @@ module.exports = {
           bookId: 2, // Преступление и наказание
         },
         {
+          userId: 1, // Иван
+          bookId: 11, // Мёртвые души
+        },
+        {
+          userId: 1, // Иван
+          bookId: 15, // Мастер и Маргарита
+        },
+        {
           userId: 2, // Мария
           bookId: 3, // Евгений Онегин
         },
@@ -210,8 +363,40 @@ module.exports = {
           bookId: 4, // Анна Каренина
         },
         {
+          userId: 2, // Мария
+          bookId: 14, // Герой нашего времени
+        },
+        {
+          userId: 2, // Мария
+          bookId: 20, // Доктор Живаго
+        },
+        {
           userId: 3, // Алексей
           bookId: 5, // Идиот
+        },
+        {
+          userId: 3, // Алексей
+          bookId: 9, // Братья Карамазовы
+        },
+        {
+          userId: 3, // Алексей
+          bookId: 15, // Мастер и Маргарита
+        },
+        {
+          userId: 3, // Алексей
+          bookId: 18, // Лолита
+        },
+        {
+          userId: 1, // Иван
+          bookId: 21, // Воскресение
+        },
+        {
+          userId: 2, // Мария
+          bookId: 22, // Бесы
+        },
+        {
+          userId: 3, // Алексей
+          bookId: 13, // Шинель
         },
       ],
       {},
@@ -232,6 +417,21 @@ module.exports = {
           rating: 5,
         },
         {
+          userId: 1, // Иван
+          bookId: 11, // Мёртвые души
+          rating: 5,
+        },
+        {
+          userId: 1, // Иван
+          bookId: 15, // Мастер и Маргарита
+          rating: 5,
+        },
+        {
+          userId: 1, // Иван
+          bookId: 21, // Воскресение
+          rating: 4,
+        },
+        {
           userId: 2, // Мария
           bookId: 3, // Евгений Онегин
           rating: 5,
@@ -239,6 +439,21 @@ module.exports = {
         {
           userId: 2, // Мария
           bookId: 4, // Анна Каренина
+          rating: 4,
+        },
+        {
+          userId: 2, // Мария
+          bookId: 14, // Герой нашего времени
+          rating: 5,
+        },
+        {
+          userId: 2, // Мария
+          bookId: 20, // Доктор Живаго
+          rating: 5,
+        },
+        {
+          userId: 2, // Мария
+          bookId: 22, // Бесы
           rating: 4,
         },
         {
@@ -252,14 +467,69 @@ module.exports = {
           rating: 4,
         },
         {
+          userId: 3, // Алексей
+          bookId: 9, // Братья Карамазовы
+          rating: 5,
+        },
+        {
+          userId: 3, // Алексей
+          bookId: 13, // Шинель
+          rating: 4,
+        },
+        {
+          userId: 3, // Алексей
+          bookId: 15, // Мастер и Маргарита
+          rating: 5,
+        },
+        {
+          userId: 3, // Алексей
+          bookId: 18, // Лолита
+          rating: 4,
+        },
+        {
           userId: 1, // Иван
           bookId: 7, // Отцы и дети
           rating: 4,
         },
         {
+          userId: 1, // Иван
+          bookId: 12, // Ревизор
+          rating: 5,
+        },
+        {
           userId: 2, // Мария
           bookId: 8, // Капитанская дочка
           rating: 5,
+        },
+        {
+          userId: 2, // Мария
+          bookId: 16, // Собачье сердце
+          rating: 5,
+        },
+        {
+          userId: 3, // Алексей
+          bookId: 17, // Белая гвардия
+          rating: 4,
+        },
+        {
+          userId: 1, // Иван
+          bookId: 19, // Защита Лужина
+          rating: 4,
+        },
+        {
+          userId: 2, // Мария
+          bookId: 23, // Дубровский
+          rating: 5,
+        },
+        {
+          userId: 3, // Алексей
+          bookId: 24, // Палата №6
+          rating: 4,
+        },
+        {
+          userId: 1, // Иван
+          bookId: 25, // Рудин
+          rating: 3,
         },
       ],
       {},
@@ -273,6 +543,11 @@ module.exports = {
           userId: 1, // Иван
           bookId: 1, // Война и мир
           commentText: 'Великолепное произведение! Один из лучших романов русской литературы.',
+        },
+        {
+          userId: 1, // Иван
+          bookId: 1, // Война и мир
+          commentText: 'Перечитываю уже третий раз. Каждый раз открываю что-то новое.',
         },
         {
           userId: 2, // Мария
@@ -299,6 +574,107 @@ module.exports = {
           userId: 3, // Алексей
           bookId: 6, // Вишнёвый сад
           commentText: 'Классика русской драматургии. Чехов - мастер подтекста.',
+        },
+        {
+          userId: 1, // Иван
+          bookId: 11, // Мёртвые души
+          commentText: 'Гоголь - непревзойдённый мастер сатиры. Читается на одном дыхании.',
+        },
+        {
+          userId: 2, // Мария
+          bookId: 12, // Ревизор
+          commentText: 'Остроумная комедия. Актуальна и сегодня.',
+        },
+        {
+          userId: 3, // Алексей
+          bookId: 13, // Шинель
+          commentText: 'Трогательная история о маленьком человеке. Гоголь в лучшей форме.',
+        },
+        {
+          userId: 1, // Иван
+          bookId: 14, // Герой нашего времени
+          commentText: 'Лермонтов создал незабываемый образ Печорина. Великолепная проза.',
+        },
+        {
+          userId: 2, // Мария
+          bookId: 15, // Мастер и Маргарита
+          commentText: 'Фантастический роман о добре и зле. Булгаков - гений!',
+        },
+        {
+          userId: 3, // Алексей
+          bookId: 15, // Мастер и Маргарита
+          commentText: 'Перечитываю каждый год. Каждый раз нахожу новые смыслы.',
+        },
+        {
+          userId: 1, // Иван
+          bookId: 16, // Собачье сердце
+          commentText: 'Острая сатира на советскую действительность. Блестяще!',
+        },
+        {
+          userId: 2, // Мария
+          bookId: 17, // Белая гвардия
+          commentText: 'Трогательная история о семье в годы Гражданской войны.',
+        },
+        {
+          userId: 3, // Алексей
+          bookId: 18, // Лолита
+          commentText: 'Сложное произведение. Набоков - мастер слова.',
+        },
+        {
+          userId: 1, // Иван
+          bookId: 19, // Защита Лужина
+          commentText: 'Интересный роман о шахматисте. Набоков показывает внутренний мир героя.',
+        },
+        {
+          userId: 2, // Мария
+          bookId: 20, // Доктор Живаго
+          commentText: 'Эпический роман о судьбе человека в эпоху перемен.',
+        },
+        {
+          userId: 3, // Алексей
+          bookId: 21, // Воскресение
+          commentText: 'Толстой о нравственном возрождении. Глубокое произведение.',
+        },
+        {
+          userId: 1, // Иван
+          bookId: 22, // Бесы
+          commentText: 'Достоевский предвидел будущее. Актуально и сегодня.',
+        },
+        {
+          userId: 2, // Мария
+          bookId: 23, // Дубровский
+          commentText: 'Увлекательный роман о благородном разбойнике. Пушкин в лучшей форме.',
+        },
+        {
+          userId: 3, // Алексей
+          bookId: 24, // Палата №6
+          commentText: 'Чехов о безумии общества. Потрясающая повесть.',
+        },
+        {
+          userId: 1, // Иван
+          bookId: 25, // Рудин
+          commentText: 'Тургенев о лишнем человеке. Классика русской литературы.',
+        },
+        {
+          userId: 2, // Мария
+          bookId: 9, // Братья Карамазовы
+          commentText: 'Философский роман о вере и сомнении. Достоевский на пике формы.',
+        },
+        {
+          userId: 3, // Алексей
+          bookId: 7, // Отцы и дети
+          commentText: 'Актуальная тема конфликта поколений. Тургенев - мастер диалога.',
+        },
+        {
+          userId: 1, // Иван
+          bookId: 8, // Капитанская дочка
+          commentText:
+            'Исторический роман о пугачёвском восстании. Пушкин - мастер исторической прозы.',
+        },
+        {
+          userId: 2, // Мария
+          bookId: 10, // Дама с собачкой
+          commentText: 'Тонкий рассказ о любви. Чехов - мастер короткой прозы.',
         },
       ],
       {},
