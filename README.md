@@ -2,6 +2,9 @@
 Для запуска сервера и прод версии проекта нужно из корневой папки /project запустить:
 1) docker compose up --build (можно без build, но не будет пересборки (просто запустятся контейнеры без новых изменений))
 
+* Фронт на 80 порту (прод)
+*  Бэк на 3000 порту
+
 # Ошибки
 Может всплыть:
 1) failed to solve: process "/bin/sh -c npm run build" did not complete successfully: exit code: 2
