@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; // Чтобы padding не увеличивал ширину элементов
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+  font-family: 'Literata', serif; // Из макета
+}
+
+#root {
+  height: 100%; // Для корректной работы Flexbox в Layout
+}

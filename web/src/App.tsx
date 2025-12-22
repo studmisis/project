@@ -2,22 +2,30 @@ import {
   createBrowserRouter,
   RouterProvider,
   Outlet,
-  Link, 
 } from "react-router-dom";
 
-import Home from "./pages/Home";
+import { MainPage } from "./pages/MainPage/MainPage";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import { Header } from "./components/Header/Header";
+import { Footer } from "./components/Footer/Footer";
 
 const Layout = () => (
   <>
-    <nav style={{ borderBottom: "1px solid #ccc", padding: "10px" }}>
-      <Link to="/">Главная</Link> |{" "}
-      <Link to="/about">О нас</Link> |{" "}
-      <Link to="/contact">Контакты</Link>
-    </nav>
-    <div style={{ padding: "20px" }}>
-      <Outlet /> 
+    <div style={{ 
+        display: 'flex', 
+        flexDirection: 'column', 
+        minHeight: '100vh', // Растягиваем на всю высоту экрана
+        backgroundColor: '#f5eee8', // Общий фон страницы из макета
+        width: '100%',
+        margin:0,
+        padding:0,
+      }}>
+      <Header />
+      <main style={{ flex: '1 0 auto' }}> 
+        <Outlet />
+      </main>
+      <Footer />
     </div>
   </>
 );
@@ -29,7 +37,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home />,
+        element: <MainPage />,
       },
       {
         path: "about",

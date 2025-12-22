@@ -1,0 +1,84 @@
+@use '../../styles/variables' as *;
+
+.header {
+  background-color: $color-bg-white;
+  border-bottom: 1px solid #eee;
+  padding: 15px 40px;
+  width: 100%;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr; // Центрирует заголовок идеально
+    align-items: center;
+  }
+
+  .logoGroup {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+
+    .logoText {
+      font-size: 28px;
+      font-weight: bold;
+      color: $color-header-text;
+      font-family: 'Literata', serif;
+    }
+
+    .logoIcon {
+      color: $color-accent;
+      font-size: 24px;
+    }
+  }
+
+  .mainTitle {
+    font-size: 22px;
+    color: $color-header-text;
+    font-weight: 600;
+    font-family: 'Literata', serif;
+  }
+
+  .userActions {
+    justify-self: end;
+    display: flex;
+    gap: 20px;
+
+  button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      // Прямая покраска иконок в коричневый
+      color: #c46a45; 
+      transition: transform 0.2s ease, opacity 0.2s ease;
+
+      svg {
+        width: 20px;  // Размер можно чуть увеличить для соответствия макету
+        height: 20px;
+        fill: currentColor; // Это позволяет CSS управлять цветом через свойство color
+      }
+
+      &:hover {
+        opacity: 0.8;
+        transform: translateY(-1px);
+      }
+    }
+  }
+}
+
+// Адаптив для мобильных устройств
+@media (max-width: 768px) {
+  .header .container {
+    grid-template-columns: 1fr 1fr;
+    
+    .mainTitle {
+      display: none; // Прячем заголовок на узких экранах
+    }
+  }
+}

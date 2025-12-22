@@ -1,0 +1,63 @@
+@use '../../styles/variables' as *;
+
+.footer {
+  background-color: $color-bg-section; // Цвет #eaddcf
+  padding: 30px 40px;
+  margin-top: 50px;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; // Для переноса на мобилках
+    gap: 20px;
+  }
+
+  .brandInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    .brandName {
+      font-size: 18px;
+      font-weight: bold;
+      color: #6a5b53;
+      font-family: 'Literata', serif;
+    }
+
+    .slogan {
+      font-size: 14px;
+      color: #6a5b53;
+    }
+  }
+
+  .footerLinks {
+    display: flex;
+    gap: 30px;
+
+    a {
+      text-decoration: none;
+      color: #6a5b53;
+      font-size: 14px;
+      font-weight: 500;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .footer .container {
+    flex-direction: column;
+    text-align: center;
+    
+    .footerLinks {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+}
