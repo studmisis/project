@@ -1,0 +1,187 @@
+@use '../../styles/variables' as *;
+
+.mainContainer {
+  background-color: $color-bg-main;
+}
+
+.toolbar {
+  background-color: $color-bg-toolbar; // Белый фон как на скрине
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 15px 40px;
+  gap: 20px;
+
+  .searchWrapper {
+    background-color: $color-bg-section;
+    border: none;
+    border-radius: 8px;
+  }
+
+  .searchIcon {
+    background: none;
+    border: none;
+    padding: 10px;
+  }
+
+  input {
+    background-color: $color-bg-section;
+    border: none;
+    border-radius: 8px;
+    height: 40px;
+    padding: 0 15px;
+    width: 400px;
+  }
+}
+
+.bookSection {
+  margin-bottom: 20px;
+}
+
+.sectionHeader {
+  background-color: $color-bg-section-title; // #D9BFAE 60%
+  padding: 12px 40px;
+  
+  h2 {
+    font-size: 22px;
+    color: #3a2f28;
+    font-family: 'Literata', serif;
+    font-weight: 600;
+  }
+}
+
+.scrollContainer {
+  display: flex;
+  overflow-x: auto; // Включаем горизонтальный скролл
+  padding: 30px 40px;
+  gap: 25px;
+  background-color: #f5eee8; // Фон под книгами из второго скрина
+  
+  // Прячем стандартный скроллбар для эстетики
+  &::-webkit-scrollbar {
+    height: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: rgba(196, 106, 69, 0.3);
+    border-radius: 10px;
+  }
+}
+
+.cardWrapper {
+  flex: 0 0 auto; // Запрещаем карточкам сжиматься
+  width: 159px; // Фиксированная ширина для скролла
+}
+
+.controls {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+
+.dropdown, .iconBtn {
+  background-color: $color-bg-section;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.viewToggle {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  button {
+    background: none; 
+    border: none;
+    border-radius: 6px;
+    height: 40px; // Высота как у .dropdown и .iconBtn
+    width: 40px;  // Квадратная форма для иконок вида
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #3a2f28; // Темный цвет иконки
+    transition: all 0.2s ease;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  // Активная кнопка с коричневой рамкой из макета
+  .active {
+    border: 2px solid $color-accent; // Коричневая рамка
+    color: $color-accent; // Иконка становится коричневой
+  }
+}
+
+/* ... ваши старые стили без изменений ... */
+
+.listContainer {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  padding: 30px 40px;
+  gap: 20px;
+  background-color: #f5eee8; // Фон под списком
+}
+
+.listCardWrapper {
+  display: flex;
+  background-color: #eaddcf; // Бежевый фон карточки
+  border-radius: 12px;
+  padding: 40px;
+  gap: 30px;
+  align-items: flex-start;
+  width: 900px;
+
+  /* Исправленный селектор: обращаемся к любому вложенному div, 
+     который является самой карточкой BookCard */
+  & > div:first-child { 
+    width: 300px; // Фиксируем ширину обложки в списке
+    flex-shrink: 0;
+  }
+}
+
+.bookDescription {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #3a2f28;
+  text-align: left;
+
+  h3 {
+    margin: 0;
+    font-size: 20px;
+    font-family: 'Literata', serif;
+  }
+
+  .author {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .text {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    opacity: 0.9;
+  }
+}
+
+.loadMore {
+  display: block;
+  margin: 40px auto;
+  padding: 12px 40px;
+  background-color: #eaddcf;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Literata', serif;
+  font-weight: 600;
+  color: #3a2f28;
+
+}
