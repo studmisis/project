@@ -5,6 +5,7 @@ interface BookCardProps {
   title: string;
   author: string;
   rating: string;
+  viewType?: 'grid' | 'list'; // Добавляем это свойство
 }
 
 export function BookCard({ image, title, author, rating }: BookCardProps) {
